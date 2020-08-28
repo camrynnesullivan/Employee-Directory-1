@@ -1,6 +1,5 @@
-import React from "react";
-import Table from "./Table";
-
+import React, { useState } from "react";
+import players from "../Table/players.json";
 
 const style = {
   textAlign: "center",
@@ -8,44 +7,48 @@ const style = {
   margin: "0 auto",
 };
 
-function Search() {
- state = {result: {}, search: ""}
+function Search({ setResults }) {
+  //state = {result: {}, search: ""}
+  const [search, setSearch] = useState("");
 
-// When this component mounts, search the Giphy API for pictures of Movies
-  componentDidMount() {
-    this.searchPlayers("");
-  };
-  
-  searchPlayers = (query) => {
-    players.json
-      .search(query)
-      .then((res) => this.setState({ result: res.data }))
-      .catch((err) => console.log(err));
+  // searchPlayers = (query) => {
+  //   players.json
+  //     .search(query)
+  //     .then((res) => this.setState({ result: res.data }))
+  //     .catch((err) => console.log(err));
+  // };
+
+  const handleInputChange = (event) => {
+    setSearch(event.target.value);
+    if (event.target.value === "") {
+      setResults(players);
+    } else {
+      var filteredPlayers = players.filter((player) => {
+        return player.name.includes(search);
+      });
+      console.log(filteredPlayers);
+      setResults(filteredPlayers);
+    }
   };
 
-  handleInputChange = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    this.setState({
-      [name]: value,
-    });
-  };
-  handleFormSubmit = (event) => {
+  const handleFormSubmit = (event) => {
     event.preventDefault();
-    this.searchPlayers(this.state.search);
+    //You will search the players.json data using the search state variable
+
+    //use setREsults to save the returned players as results
+    //this.searchPlayers(this.state.search);
   };
 
   return (
     <div className="search" style={style}>
-      <h3>Search for a player here!</h3>
+      <h3>Search for a player here!</h3>S
       <input
         placeholder="search here"
         className="user-type"
         style={style}
-        value = {this.state.search}
-        handleInputChange = {this.handleInputChange}
-        handleFormSubmit = {this.handleFormSubmit}
-        
+        value={search}
+        onChange={handleInputChange}
+        onSubmit={handleFormSubmit}
       ></input>
     </div>
   );
