@@ -24,7 +24,7 @@ function Search({ setResults }) {
       setResults(players);
     } else {
       var filteredPlayers = players.filter((player) => {
-        return player.name.includes(search);
+        return player.name.toLowerCase().includes(search);
       });
       console.log(filteredPlayers);
       setResults(filteredPlayers);
@@ -41,7 +41,7 @@ function Search({ setResults }) {
 
   return (
     <div className="search" style={style}>
-      <h3>Search for a player here!</h3>S
+      <h3>Search for a player here!</h3>
       <input
         placeholder="search here"
         className="user-type"
