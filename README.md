@@ -44,7 +44,7 @@ I WANT to be able to see my roster of players and quickly check their statistics
 - See deployed app on
   [Heroku ](https://still-plateau-25675.herokuapp.com/)
   and
-  [GitHub ](https://github.com/camrynnesullivan/Progressive-Budget)
+  [GitHub ](https://github.com/camrynnesullivan/Employee-Directory-1)
 
   to test features.
 
