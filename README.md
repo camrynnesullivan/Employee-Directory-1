@@ -1,4 +1,4 @@
-# Progressive Directory App
+# Searchable Directory App
 
 [![License:MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
