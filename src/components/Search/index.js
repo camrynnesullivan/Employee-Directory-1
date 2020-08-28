@@ -8,15 +8,7 @@ const style = {
 };
 
 function Search({ setResults }) {
-  //state = {result: {}, search: ""}
   const [search, setSearch] = useState("");
-
-  // searchPlayers = (query) => {
-  //   players.json
-  //     .search(query)
-  //     .then((res) => this.setState({ result: res.data }))
-  //     .catch((err) => console.log(err));
-  // };
 
   const handleInputChange = (event) => {
     setSearch(event.target.value);
@@ -31,14 +23,6 @@ function Search({ setResults }) {
     }
   };
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
-    //You will search the players.json data using the search state variable
-
-    //use setREsults to save the returned players as results
-    //this.searchPlayers(this.state.search);
-  };
-
   return (
     <div className="search" style={style}>
       <h3>Search for a player here!</h3>
@@ -48,7 +32,6 @@ function Search({ setResults }) {
         style={style}
         value={search}
         onChange={handleInputChange}
-        onSubmit={handleFormSubmit}
       ></input>
     </div>
   );

@@ -8,11 +8,6 @@ const tableStyle = {
 };
 
 function Table({ results }) {
-  //class Table extends React.Component {
-  //  state = { players: players };
-
-  // render() {
-  //   console.log(this.state.players);
   return (
     <div style={tableStyle}>
       <table className="table table-striped">
@@ -50,6 +45,5 @@ function Table({ results }) {
     </div>
   );
 }
-//}
 
 export default Table;
